@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const route = useRoute();
 const { chat, messages, sendMessage } = useChat();
 
 const typing = ref(false);
