@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ChatMessage, Chat } from '../types'
+import type { ChatMessage, Chat } from '../../shared/types/types'
 
 const props = defineProps<{
   messages: ChatMessage[]
@@ -32,7 +32,7 @@ watch(() => props.messages, pinToBottom, { deep: true })
       <template v-else>
         <div class="chat-header">
           <h1 class="title">
-            {{ chat?.title || 'Untitled Chat' }}
+            {{ chat?.title || "Untitled Chat" }}
           </h1>
         </div>
         <div class="messages-container">
@@ -46,9 +46,7 @@ watch(() => props.messages, pinToBottom, { deep: true })
             }"
           >
             <div class="message-content">
-              <MarkdownRenderer
-                :content="message.content"
-              />
+              <MarkdownRenderer :content="message.content" />
             </div>
           </div>
 
@@ -147,9 +145,7 @@ watch(() => props.messages, pinToBottom, { deep: true })
   position: fixed;
   bottom: 1.5rem;
   max-width: 800px;
-  width: calc(
-    100% - 3rem
-  ); /* Account for container padding */
+  width: calc(100% - 3rem); /* Account for container padding */
   z-index: 10;
 }
 
